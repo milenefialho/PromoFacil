@@ -6,6 +6,39 @@
 
 <div class="container">
 
+    {% if status == '0'%}
+        <div class="alert alert-sucess" role="alert">
+            Cadastro realizado com sucesso.
+        </div>
+    {% endif %}
+
+    {% if status == '1'%}
+        <div class="alert alert-danger" role="alert">
+            Nome e email não podem estar vazio.
+        </div>
+    {% endif %}
+
+    {% if status == '2'%}
+        <div class="alert alert-danger" role="alert">
+            Sua senha deve ter pelo menos 8 caracteres.
+        </div>
+    {% endif %}
+
+    {% if status == '3'%}
+        <div class="alert alert-danger" role="alert">
+            Usuário já existe no sistema.
+        </div>
+    {% endif %}
+
+    {% if status == '4'%}
+        <div class="alert alert-danger" role="alert">
+            Erro interno do sistema.
+        </div>
+    {% endif %}
+
+    
+
+
     <div class="row">
 
         <div class="col-md-3">
@@ -29,6 +62,7 @@
                 <input name = "senha"class="form-control" type="password" placeholder="Senha..." name="senha">
                 <br>
                 <input class="bnt btn-info btn-lg" type="submit" value="Enviar">
+                <a href="{% url 'login' %}" class ="btn btn-warning btn-lg">Login</a>
                 <br>
             </form>
         </div>
